@@ -79,7 +79,6 @@ if __name__ == "__main__":
 
     s.details()
 
-    s.expire()
     print(s.name)
 
 
