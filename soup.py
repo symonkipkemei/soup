@@ -1,12 +1,8 @@
 import webbrowser
 
-
-
-
 class Ingredient:
     """Models a food item used as an ingredient."
     """
-    
 
     def __init__(self, name:str, amount:int):
         """Creates instance variables
@@ -36,7 +32,7 @@ class Ingredient:
 
         return Ingredient(name=new_name, amount=new_amount)
     
-    def details(self):
+    def get_info(self):
         base_url = "https://en.wikipedia.org/wiki"
         name_url = str.capitalize(self.name)
         url = base_url + "/" + name_url
@@ -49,38 +45,47 @@ class Ingredient:
     def __repr__(self):
         return f"Ingredient(name={self.name}, amount={self.amount})"
 
-
-
 class Spice(Ingredient):
     "Models a spice to flavor your food"
+
+    def __init__(self,name:str, amount: int, taste:str):
+        super().__init__(name,amount)
+        self.taste = taste
+
 
     def grind(self):
         print(f"You have now {self.amount} of ground {self.name}")
 
     def expire(self):
-        print(f" Your {self.name} has expired. It's probably still good")
-        self.name = "old" + self.name
+        if str.lower(self.name) == "salt":
+            print(f"{self.name} never expires! ask the sea")
+        else:
+            print(f" Your {self.name} has expired. It's probably still good")
+            self.name = "old" + self.name
+
+class Vegetables(Ingredient):
+    "models vegetables"
+    def expire(self):
+        print(f"{self.name} is rotten.It is no longer edible")
+        self.name = "rotten" + self.name
         
-    pass
+
 
 if __name__ == "__main__":
-    p = Ingredient("PEAS", 20)
-    print(p)
+    #objects
+    peas = Ingredient("PEAS", 20)
+    salt = Spice("salt",20,"spicy")
 
-    s = Spice("salt",20)
 
-
-    s.expire()
-    s.grind()
-
+    #search more info
+    print(peas.get_info())
+    print(salt.get_info())
     
+  
 
-    print(s)
+ 
 
-    s.details()
-
-    print(s.name)
-
+   
 
 
 
