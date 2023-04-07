@@ -12,8 +12,45 @@
 
 <h1 id="intro">File Search</h1>
 
-## The Scrape 
-Scraping all recipes from https://codingnomads.github.io/recipes/ and organising them into a json file fo further analysis
+## Ingredient info search script (Soup )
+After creating an Ingredient() class and learning about OOP, it's time to make something useful with your new knowledge.
+
+For this project, you'll build an ingredient info search script. Your Python code should do the following:
+
+Implement the Ingredient() class, where each ingredient has at least a .name and an .amount attribute.
+Add an instance method called .get_info() that takes the .name attribute of an Ingredient() and creates a Wikipedia URL.
+The .get_info() method should then automatically open the corresponding Wikipedia page in your web browser:
+Wikipedia page of 'carrot'
+
+To complete this project, you'll need to create a new instance method, as well as read up on how you can use Python to open up your local web browser at a certain URL. To help you get started, check out the documentation of the webbrowser module in Python's standard library.
+
+You'll also need to think about how to create the right URL to find the page you're looking for. Go to Wikipedia and search for a page. Then take a look at the URL. What can you see?
+
+https://en.wikipedia.org/wiki/Carrot
+What happens when you change to a different page? How can you implement this in your .get_info() method, and what potential challenges could you encounter? If you want to challenge yourself, you can even try to write some code to tackle some of these challenges.
+
+As always, you're encouraged to map out the plan for your program in your notebook. Scribble, draw, draft, and revisit. Convert your handwritten notes to pseudocode. Only then you should start writing your functional code.
+
+Tasks
+What other methods can you think to implement in your Ingredient() class?
+What type of webbrowser call could you add to your .cook() method?
+Think about the organization of your class and practice working with self to get a better understanding of how Python classes work internally.
+
+When you are done with this project, you can move on to the next project where you'll improve your CLI game with object-oriented concepts.
+
+
+________________________________________________________________________________________________________________________________________________________________________
+
+For this project, you'll create a custom Soup() class that can take Ingredient() and Spice() objects, and use them to look up soup recipes on the Internet.
+
+Your Soup() objects should at least be able to:
+
+take an unlimited number of Ingredient() or Spice() objects during instantiation
+have a .cook() method that returns a search result for a soup recipe using all the added ingredients
+Keep in mind that you're building an abstraction for your users. You can hide a lot of the inner workings of your Soup() instances from them to present them with a simple interface
+
+
+
 
 <TECHNOLOGIES>
 

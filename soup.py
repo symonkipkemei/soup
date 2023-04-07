@@ -80,6 +80,8 @@ if __name__ == "__main__":
     #search more info
     print(peas.get_info())
     print(salt.get_info())
+
+    print(salt)
     
   
 
